@@ -1,0 +1,28 @@
+{1 {:id 1,
+    :name "Brownie",
+    :imageURL
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHdr1eTXEMs68Dx-b_mZT0RpifEQ8so6A1unRsJlyJIPe0LUE2HQ",
+    :price 2,
+    :bulkPricing {:qty 4, :price 7}}
+
+   2 {:id 2,
+      :name "Key Lime Cheesecake",
+      :imageURL
+      "http://1.bp.blogspot.com/-7we9Z0C_fpI/T90JXcg3YsI/AAAAAAAABn4/EN7u2vMuRug/s1600/key+lime+cheesecake+slice+in+front.jpg",
+      :price 8,
+      :bulkPricing nil}
+
+ 3 {:id 3,
+    :name "Cookie",
+    :imageURL
+    "http://www.mayheminthekitchen.com/wp-content/uploads/2015/05/chocolate-cookie-square.jpg",
+    :price 1.25,
+    :bulkPricing {:qty 6, :price 6}}
+
+
+ 4 {:id 4,
+    :name "Mini Gingerbread Donut",
+    :imageURL
+    "https://s3.amazonaws.com/pinchofyum/gingerbread-donuts-22.jpg",
+    :price 0.5,
+    :bulkPricing nil}}
