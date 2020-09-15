@@ -8,18 +8,18 @@
      :month-in-year 10    ;; Month of year in which event should occur
      :percentage 25
      :price nil
-     :qty 1}
-    {:start-date "2018-10-01"
-     :end-date "2100-10-01"
-     :offer-description "Key Lime Cheesecakes, 2 for 14"
-     :recurring true
-     :frequency "week"
-     :day-in-week 1         ;; Day on which event should occur
-     :date-in-month nil     ;; Day of month in which event should occur
-     :month-in-year nil     ;; Month of year in which event should occur
-     :percentage nil
-     :price 14
-     :qty 2}]
+     :qty 1}]
+    ;{:start-date "2018-10-01"
+    ; :end-date "2100-10-01"
+    ; :offer-description "Key Lime Cheesecakes, 2 for 14"
+    ; :recurring true
+    ; :frequency "week"
+    ; :day-in-week 1         ;; Day on which event should occur
+    ; :date-in-month nil     ;; Day of month in which event should occur
+    ; :month-in-year nil     ;; Month of year in which event should occur
+    ; :percentage nil
+    ; :price 14
+    ; :qty 2}]
  3 [{:start-date "2020-01-01"
      :end-date "2100-01-01"
      :offer-description "8 Cookies for $6.00"

@@ -1,4 +1,4 @@
-(ns pencil-project.helper.items
+(ns pencil-artifact.helper.items
   (:require
     [clojure.string :as str]))
 

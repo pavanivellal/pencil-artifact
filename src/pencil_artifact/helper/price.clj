@@ -1,11 +1,9 @@
-(ns pencil-project.helper.price
-  (:require [pencil-project.data          :as data]
-            [pencil-project.helper.offers :as offers]))
+(ns pencil-artifact.helper.price
+  (:require [pencil-artifact.data          :as data]
+            [pencil-artifact.helper.offers :as offers]))
 
 (defn- calc-price [item-obj offer-obj]
   (let [item-qty         (:qty item-obj)
-        _ (println "item-obj:" item-obj)
-        _ (println "item-qty:" item-qty)
         offer-qty        (:qty offer-obj)
         item-final-price (:final-price item-obj)
         offer-price      (:price offer-obj)]
@@ -75,10 +73,6 @@
         final-price             (apply-percentage-based-offers (:final-price final-price-obj)
                                                                percentage-based-offers)]
     final-price))
-
-
-
-
 
 (comment
   (get-best-price 2 "2020-10-01" 1)

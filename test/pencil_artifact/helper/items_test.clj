@@ -1,6 +1,6 @@
-(ns pencil-project.helper.items-test
+(ns pencil-artifact.helper.items-test
   (:require [clojure.test :refer :all])
-  (:require [pencil-project.helper.items :as items]))
+  (:require [pencil-artifact.helper.items :as items]))
 
 (deftest parse-item-test
   (testing "parse items"

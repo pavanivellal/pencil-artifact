@@ -1,4 +1,4 @@
-(ns pencil-project.helper.date
+(ns pencil-artifact.helper.date
   (:require [clj-time.core :refer [day-of-week day month]]
             [clj-time.format :as f]
             [clj-time.core :as dt]))

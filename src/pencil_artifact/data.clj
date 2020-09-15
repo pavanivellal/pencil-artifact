@@ -1,4 +1,4 @@
-(ns pencil-project.data)
+(ns pencil-artifact.data)
 
 
 (defn init []

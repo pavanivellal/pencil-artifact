@@ -1,10 +1,10 @@
-(ns pencil-project.core
+(ns pencil-artifact.core
   (:gen-class)
   (:require
     [clj-time.core               :as dt]
     [clojure.string              :as str]
-    [pencil-project.helper.items :as items]
-    [pencil-project.data         :as data]
+    [pencil-artifact.helper.items :as items]
+    [pencil-artifact.data         :as data]
     [clojure.pprint              :as pprint]))
 
 (defn -main

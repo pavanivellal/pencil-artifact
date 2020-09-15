@@ -1,4 +1,4 @@
-# pencil-project
+# pencil-artifact
 
 FIXME: description
 
@@ -10,7 +10,7 @@ Download from http://example.com/FIXME.
 
 FIXME: explanation
 
-    $ java -jar pencil-project-0.1.0-standalone.jar [args]
+    $ java -jar pencil-artifact-0.1.0-standalone.jar [args]
 
 ## Options
 

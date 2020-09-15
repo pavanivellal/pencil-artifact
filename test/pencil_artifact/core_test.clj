@@ -1,6 +1,6 @@
-(ns pencil-project.core-test
+(ns pencil-artifact.core-test
   (:require [clojure.test :refer :all]
-            [pencil-project.core :refer :all]))
+            [pencil-artifact.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."
