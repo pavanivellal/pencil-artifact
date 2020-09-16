@@ -80,40 +80,41 @@
                           (get-special-offers item-id base-price offer-date qty))]
     (println "Special offers : " special-offers)
     (println "Volume offers : " all-offers)
-    (concat all-offers special-offers)))
+    {:special-offers special-offers
+     :volume-offers volume-offers}))
 
 
-(comment
-  (data/init)
-
-  ;; To include below test cases
-  (get-special-offers 2 {:qty 1
-                         :price 8} "2020-10-01" 1)
-  (get-special-offers 4 {:qty 1
-                         :price 0.5} "2020-09-15" 2)
-
-  ;; To include below test cases
-  (get-valid-offers 2 "2100-10-01" 1)
-
-  ;; To include below test cases
-  (get-volume-offers 3 3)
-  (get-volume-offers 3 7)
-
-  ;; To include below test cases
-  (get-applicable-offers 2 "2020-10-01" 1)
-  (get-applicable-offers 3 "2020-09-18" 6)
-  (get-applicable-offers 3 "2020-09-18" 8)
-
-
-  ;; To include below test cases
-  (get-applicable-offers 3 nil 1)
-  (get-applicable-offers 1 nil 4)
-  (get-applicable-offers 2 nil 1)
-
-  ;; To include below test cases
-  (get-applicable-offers 3 nil 8)
-  (get-applicable-offers 2 "2020-10-01" 1)
-
-  :end)
+;(comment
+;  (data/init)
+;
+;  ;; To include below test cases
+;  (get-special-offers 2 {:qty 1
+;                         :price 8} "2020-10-01" 1)
+;  (get-special-offers 4 {:qty 1
+;                         :price 0.5} "2020-09-15" 2)
+;
+;  ;; To include below test cases
+;  (get-valid-offers 2 "2100-10-01" 1)
+;
+;  ;; To include below test cases
+;  (get-volume-offers 3 3)
+;  (get-volume-offers 3 7)
+;
+;  ;; To include below test cases
+;  (get-applicable-offers 2 "2020-10-01" 1)
+;  (get-applicable-offers 3 "2020-09-18" 6)
+;  (get-applicable-offers 3 "2020-09-18" 8)
+;
+;
+;  ;; To include below test cases
+;  (get-applicable-offers 3 nil 1)
+;  (get-applicable-offers 1 nil 4)
+;  (get-applicable-offers 2 nil 1)
+;
+;  ;; To include below test cases
+;  (get-applicable-offers 3 nil 8)
+;  (get-applicable-offers 2 "2020-10-01" 1)
+;
+;  :end)
 
 
