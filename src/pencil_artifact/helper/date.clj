@@ -17,13 +17,3 @@
         (= date-o end-dt)
         (and (dt/after?  date-o start-dt)
              (dt/before? date-o end-dt)))))
-
-
-(comment
-  (day-of-week (dt/now))
-
-
-  (within-range? "2020-10-01" "2020-01-01" "2021-01-01")
-
-  (dt/after? (dt/now) (f/parse "2019-10-01"))
-  :end)

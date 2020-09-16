@@ -25,17 +25,6 @@
                                 (float (* tot-price (/ percentage 100))))}) ;; Discount
                item))) offers)))
 
-
-;(comment
-;  (convert-percentage-offers-to-amount {:qty 1
-;                                        :price 10}
-;                                       [{:qty 2
-;                                         :percentage 50}
-;                                        {:qty 1
-;                                         :percentage 25}])
-;  :end)
-
-
 (defn get-special-offers [item-id base-price offer-date qty]
   (let [offers-for-item             (get-valid-offers item-id offer-date qty)
         offer-date                  (dt/parse-dt-str offer-date)
@@ -80,39 +69,5 @@
                           (get-special-offers item-id base-price offer-date qty))]
     {:special-offers special-offers
      :volume-offers volume-offers}))
-
-
-;(comment
-;  (data/init)
-;
-;  ;; To include below test cases
-;  (get-special-offers 2 {:qty 1
-;                         :price 8} "2020-10-01" 1)
-;  (get-special-offers 4 {:qty 1
-;                         :price 0.5} "2020-09-15" 2)
-;
-;  ;; To include below test cases
-;  (get-valid-offers 2 "2100-10-01" 1)
-;
-;  ;; To include below test cases
-;  (get-volume-offers 3 3)
-;  (get-volume-offers 3 7)
-;
-;  ;; To include below test cases
-;  (get-applicable-offers 2 "2020-10-01" 1)
-;  (get-applicable-offers 3 "2020-09-18" 6)
-;  (get-applicable-offers 3 "2020-09-18" 8)
-;
-;
-;  ;; To include below test cases
-;  (get-applicable-offers 3 nil 1)
-;  (get-applicable-offers 1 nil 4)
-;  (get-applicable-offers 2 nil 1)
-;
-;  ;; To include below test cases
-;  (get-applicable-offers 3 nil 8)
-;  (get-applicable-offers 2 "2020-10-01" 1)
-;
-;  :end)
 
 

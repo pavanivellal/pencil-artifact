@@ -49,7 +49,3 @@
                                :month-in-year 10}),
             :volume-offers {:base-price {:qty 1, :price 8}, :offers '({:qty 1, :price 8})}}
            (offers/get-applicable-offers 2 "2020-10-01" 1)))))
-
-(comment
-  (data/init)
-  :end)

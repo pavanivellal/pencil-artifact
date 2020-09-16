@@ -1,8 +1,6 @@
 (ns pencil-artifact.core
   (:gen-class)
   (:require
-    [clj-time.core               :as dt]
-    [clojure.string              :as str]
     [pencil-artifact.helper.items :as items]
     [pencil-artifact.helper.price :as price]
     [pencil-artifact.data         :as data]
