@@ -47,6 +47,20 @@ Cart items with quantity :
 Cart total :  16.25
 ```
 
+## Testing
+In the terminal run `lein test`
+
+Parse items from input string test : 
+lein test :items
+
+Offers helper to get offers for given item and qty tests : 
+lein test :offers
+
+Price helper to get best price for given item and qty tests :  
+lein test :price
+
+
+
 
 
 

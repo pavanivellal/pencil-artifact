@@ -63,7 +63,6 @@
   "get list of applicable offers for item-id"
   [item-id offer-date qty]
   (let [volume-offers   (get-volume-offers item-id qty)
-        all-offers      (:offers volume-offers)
         base-price      (:base-price volume-offers)
         special-offers  (when offer-date
                           (get-special-offers item-id base-price offer-date qty))]

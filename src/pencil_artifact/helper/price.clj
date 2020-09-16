@@ -16,7 +16,7 @@
          :final-price final-offer-price})
       item-obj)))
 
-(defn- apply-amount-based-offers
+(defn- apply-offers
   "Apply quantity and amount based offers"
   [{:keys [qty offers final-price]}]
   (->> (sort-by :qty #(compare %2 %1) offers)
@@ -32,10 +32,12 @@
       (-> {:qty qty
            :final-price 0
            :offers special-offers}
-          apply-amount-based-offers) ;; First apply special offers
-      (apply-amount-based-offers {:qty qty
-                                  :final-price 0
-                                  :offers (:offers volume-offers)}))))
+          apply-offers ;; First apply special offers
+          (merge volume-offers)
+          apply-offers)
+      (apply-offers {:qty         qty
+                     :final-price 0
+                     :offers      (:offers volume-offers)}))))
 
 (defn calculate-cart-total
   "Calculate total amount of cart given list of items"

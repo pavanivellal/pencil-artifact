@@ -5,7 +5,7 @@
 
 (data/init)
 
-(deftest calculate-cart-total-test
+(deftest ^:price calculate-cart-total-test
   (testing "Test 1 : with special offers"
   ;; Test 1 -------------------
   ;On 10/1/2021, add these items: 8 Cookies, 4 Cheesecakes. Verify the price is $30.
@@ -75,6 +75,39 @@
                                :qty 1}
                               {:id 4
                                :qty 2}]
-                             nil))))
+                             nil)))
+
+  (testing "Test 5 : with Friday special offer and remaining with regular price"
+    ;; Test 5 -------------------
+    ;-> 10 Cookie (item code 3) = 8.5
+    ;TOTAL = 8.5
+
+    ;; With special offer
+    (= 8.5
+       (calculate-cart-total [{:id 3
+                               :qty 10}]
+                             "2020-09-11")))
+
+  (testing "Test 5 : with Friday special offer and remaining bulk offer"
+    ;; Test 5 -------------------
+    ;-> 14 Cookie (item code 3) = 12.0
+    ;TOTAL = 12.0
+
+    ;; With special offer
+    (= 12.0
+       (calculate-cart-total [{:id 3
+                               :qty 14}]
+                             "2020-09-11")))
+
+  (testing "Test 6 : with Tuesday special offer and remaining with regular price"
+    ;; Test 6 -------------------
+    ;-> 3 Donuts (item code 4) = 1
+    ;TOTAL = 12.0
+
+    ;; With special offer
+    (= 1.0
+       (calculate-cart-total [{:id 4
+                               :qty 3}]
+                             "2020-09-15"))))
 
 

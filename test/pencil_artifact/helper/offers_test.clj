@@ -5,7 +5,7 @@
 
 (data/init)
 
-(deftest get-special-offers-test
+(deftest ^:offers get-special-offers-test
   (testing "percentage offer to amount offer"
     (is (= '({:end-date "2100-10-01",
               :frequency "year",
@@ -34,7 +34,7 @@
            (offers/get-special-offers 4 {:qty 1
                                          :price 0.5} "2020-09-15" 2)))))
 
-(deftest get-applicable-offers-test
+(deftest ^:offers get-applicable-offers-test
   (testing "get list of all applicable offers"
     (is (= {:special-offers '({:end-date "2100-10-01",
                                :frequency "year",
