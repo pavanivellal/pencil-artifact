@@ -26,14 +26,14 @@
                item))) offers)))
 
 
-(comment
-  (convert-percentage-offers-to-amount {:qty 1
-                                        :price 10}
-                                       [{:qty 2
-                                         :percentage 50}
-                                        {:qty 1
-                                         :percentage 25}])
-  :end)
+;(comment
+;  (convert-percentage-offers-to-amount {:qty 1
+;                                        :price 10}
+;                                       [{:qty 2
+;                                         :percentage 50}
+;                                        {:qty 1
+;                                         :percentage 25}])
+;  :end)
 
 
 (defn get-special-offers [item-id base-price offer-date qty]
@@ -78,8 +78,6 @@
         base-price      (:base-price volume-offers)
         special-offers  (when offer-date
                           (get-special-offers item-id base-price offer-date qty))]
-    (println "Special offers : " special-offers)
-    (println "Volume offers : " all-offers)
     {:special-offers special-offers
      :volume-offers volume-offers}))
 

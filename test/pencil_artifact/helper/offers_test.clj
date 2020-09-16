@@ -3,6 +3,8 @@
   (:require [pencil-artifact.helper.offers :as offers]
             [pencil-artifact.data :as data]))
 
+(data/init)
+
 (deftest get-special-offers-test
   (testing "percentage offer to amount offer"
     (is (= '({:end-date "2100-10-01",
@@ -34,18 +36,18 @@
 
 (deftest get-applicable-offers-test
   (testing "get list of all applicable offers"
-    (is (= {:special-offers ({:end-date "2100-10-01",
-                              :frequency "year",
-                              :recurring true,
-                              :percentage 25,
-                              :day-in-week nil,
-                              :offer-description "25% off Key Lime Cheesecakes",
-                              :date-in-month 1,
-                              :qty 1,
-                              :start-date "2020-10-01",
-                              :price 6.0,
-                              :month-in-year 10}),
-            :volume-offers {:base-price {:qty 1, :price 8}, :offers ({:qty 1, :price 8})}}
+    (is (= {:special-offers '({:end-date "2100-10-01",
+                               :frequency "year",
+                               :recurring true,
+                               :percentage 25,
+                               :day-in-week nil,
+                               :offer-description "25% off Key Lime Cheesecakes",
+                               :date-in-month 1,
+                               :qty 1,
+                               :start-date "2020-10-01",
+                               :price 6.0,
+                               :month-in-year 10}),
+            :volume-offers {:base-price {:qty 1, :price 8}, :offers '({:qty 1, :price 8})}}
            (offers/get-applicable-offers 2 "2020-10-01" 1)))))
 
 (comment

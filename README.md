@@ -1,20 +1,18 @@
 # pencil-artifact
 
-FIXME: description
+Shopping cart with volume based and special offers
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from https://github.com/pavanivellal/pencil-artifact.git
 
 ## Usage
 
-FIXME: explanation
-
-    $ java -jar pencil-artifact-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
+    $ java -jar pencil-artifact-0.0.1.jar offer-date cart-items-with-qty
+    offer-date : yyyy-MM-dd format
+    cart-items-with-qty : [{:id  (item-id as int)
+                            :qty (quantity as int)
+                            :name (optional - string)}
 
 ## Examples
 

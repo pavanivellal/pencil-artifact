@@ -1,6 +1,9 @@
 (ns pencil-artifact.helper.price-test
   (:require [clojure.test :refer :all])
-  (:require [pencil-artifact.helper.price :refer [calculate-cart-total]]))
+  (:require [pencil-artifact.helper.price :refer [calculate-cart-total]]
+            [pencil-artifact.data :as data]))
+
+(data/init)
 
 (deftest calculate-cart-total-test
   (testing "Test 1 : with special offers"
@@ -14,11 +17,10 @@
   ;; With special offers))
     (= 30.00
        (calculate-cart-total [{:id 3
-                               :offer-date "2021-10-01"
                                :qty 8}
                               {:id 2
-                               :offer-date "2021-10-01"
-                               :qty 4}])))
+                               :qty 4}]
+                             "2021-10-01")))
 
   (testing "Test 2 : without special offers"
     ;; Test 2 -------------------
@@ -36,7 +38,8 @@
                               {:id 1
                                :qty 4}
                               {:id 2
-                               :qty 1}])))
+                               :qty 1}]
+                             nil)))
 
   (testing "Test 3 : without special offers"
     ;; Test 2 -------------------
@@ -48,7 +51,8 @@
     ;; Without special offers
     (= 8.5
        (calculate-cart-total [{:id 3
-                               :qty 8}])))
+                               :qty 8}]
+                             nil)))
 
 
   (testing "Test 4 : without special offers"
@@ -70,6 +74,7 @@
                               {:id 2
                                :qty 1}
                               {:id 4
-                               :qty 2}]))))
+                               :qty 2}]
+                             nil))))
 
 

@@ -45,9 +45,9 @@
 
 (defn calculate-cart-total
   "Calculate total amount of cart given list of items"
-  [items]
+  [items offer-date]
   (reduce (fn [sum item]
-            (let [best-price (get-best-price (:id item) (:offer-date item) (:qty item))]
+            (let [best-price (get-best-price (:id item) offer-date (:qty item))]
               (+ sum (:final-price best-price)))) 0 items))
 
 (comment
@@ -62,11 +62,10 @@
   ;; With special offers
   (= 30.00
      (calculate-cart-total [{:id 3
-                             :offer-date "2021-10-01"
                              :qty 8}
                             {:id 2
-                             :offer-date "2021-10-01"
-                             :qty 4}]))
+                             :qty 4}]
+                           "2021-10-01"))
 
 
   ;; Test 2 -------------------
@@ -80,7 +79,8 @@
   ;; Without special offers
   (= 16.25
      (calculate-cart-total [{:id 3
-                             :qty 1}]))
+                             :qty 1}]
+                           nil))
 
 
 
@@ -93,7 +93,8 @@
   ;; Without special offers
   (= 8.5
      (calculate-cart-total [{:id 3
-                             :qty 8}]))
+                             :qty 8}]
+                           nil))
 
 
   ;; Test 4 -------------------
@@ -114,7 +115,8 @@
                             {:id 2
                              :qty 1}
                             {:id 4
-                             :qty 2}]))
+                             :qty 2}]
+                           nil))
 
 
   :end)
