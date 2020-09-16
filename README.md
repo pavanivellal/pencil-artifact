@@ -6,6 +6,8 @@ A shopping cqqart application that returns the total value of all items in the s
 
 Download from https://github.com/pavanivellal/pencil-artifact.git
 
+Create Jarfile - run `lein uberjar`
+
 ## Usage
 
     $ java -jar pencil-artifact-0.0.1.jar cart-items-with-qty-string offer-date
@@ -25,6 +27,7 @@ If running from clojure REPL, go to namespace pencil-artifact.core and execute b
 ```
 
 If running from command line using jar file, try the following: 
+(Ensure resource folder is in the same directory as the jarfile)
 Example 1 : 
 ```
 $ java -jar pencil-artifact-0.0.1-standalone.jar "Cookie x 8, Cheesecake x 4" 2020-10-01
