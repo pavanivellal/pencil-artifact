@@ -1,6 +1,6 @@
 # pencil-artifact
 
-Shopping cart with volume based and special offers
+A shopping cqqart application that returns the total value of all items in the shopping cart by applying applicable volume based and special offers. 
 
 ## Installation
 
@@ -8,35 +8,49 @@ Download from https://github.com/pavanivellal/pencil-artifact.git
 
 ## Usage
 
-    $ java -jar pencil-artifact-0.0.1.jar offer-date cart-items-with-qty
-    offer-date : yyyy-MM-dd format
-    cart-items-with-qty : [{:id  (item-id as int)
-                            :qty (quantity as int)
-                            :name (optional - string)}
+    $ java -jar pencil-artifact-0.0.1.jar cart-items-with-qty-string offer-date
+    -> offer-date : yyyy-MM-dd format or NA if not applicable
+        ex : 2020-10-01
+    -> cart-items-with-qty-string : Enter item name, followed by "x" and quantity if greater than 1
+        ex : "Cookie x 8, Cheesecake x 4"
+    
 
 ## Examples
+If running from clojure REPL, go to namespace pencil-artifact.core and execute below examples: 
+```
+(-main "Cookie, Brownie x 4, Cheesecake" "NA")
+(-main "Cookie x 8" "NA")
+(-main "Cookie, Brownie, Cheesecake, Donut x 2" "NA")
+(-main "Cookie x 8, Cheesecake x 4" "2021-10-01")
+```
 
-...
+If running from command line using jar file, try the following: 
+Example 1 : 
+```
+$ java -jar pencil-artifact-0.0.1-standalone.jar "Cookie x 8, Cheesecake x 4" 2020-10-01
+Output : 
+Offer date :  2020-10-01
+Cart items with quantity : 
+({:id 3, :qty 8, :name "cookie"} {:id 2, :qty 4, :name "cheesecake"})
+Cart total :  24.0
+```
 
-### Bugs
+Example 2 : 
+```
+java -jar pencil-artifact-0.0.1-standalone.jar "Cookie, Brownie x 4, Cheesecake" "NA"
+Output : 
+Offer date :  nil
+Cart items with quantity : 
+({:id 3, :qty 1, :name "cookie"}
+ {:id 1, :qty 4, :name "brownie"}
+ {:id 2, :qty 1, :name "cheesecake"})
+Cart total :  16.25
+```
 
-...
 
-### Any Other Sections
-### That You Think
-### Might be Useful
 
-## License
 
-Copyright © 2020 FIXME
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+
+

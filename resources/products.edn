@@ -5,12 +5,12 @@
     :price 2,
     :bulkPricing {:qty 4, :price 7}}
 
-   2 {:id 2,
-      :name "Key Lime Cheesecake",
-      :imageURL
-      "http://1.bp.blogspot.com/-7we9Z0C_fpI/T90JXcg3YsI/AAAAAAAABn4/EN7u2vMuRug/s1600/key+lime+cheesecake+slice+in+front.jpg",
-      :price 8,
-      :bulkPricing nil}
+ 2 {:id 2,
+    :name "Key Lime Cheesecake",
+    :imageURL
+    "http://1.bp.blogspot.com/-7we9Z0C_fpI/T90JXcg3YsI/AAAAAAAABn4/EN7u2vMuRug/s1600/key+lime+cheesecake+slice+in+front.jpg",
+    :price 8,
+    :bulkPricing nil}
 
  3 {:id 3,
     :name "Cookie",
