@@ -1,6 +1,6 @@
 # pencil-artifact
 
-A shopping cqqart application that returns the total value of all items in the shopping cart by applying applicable volume based and special offers. 
+A shopping cart application that returns the total value of all items in the shopping cart by applying applicable volume based and special offers. 
 
 ## Installation
 
